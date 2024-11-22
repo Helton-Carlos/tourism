@@ -1,7 +1,7 @@
 <template>
   <q-item
     clickable
-    :href="Router"
+    :href="path"
     class="text-dark"
   >
     <q-item-section
@@ -12,24 +12,24 @@
     </q-item-section>
 
     <q-item-section>
-      <q-item-label>{{ title }}</q-item-label>
+      <q-item-label class="text-weight-medium">{{ title }}</q-item-label>
     </q-item-section>
   </q-item>
 </template>
 
 <script setup lang="ts">
 defineOptions({
-  name: 'EssentialRouter'
+  name: 'EssentialPath'
 });
 
-export interface EssentialRouterProps {
+export interface EssentialPathProps {
   title: string;
-  Router?: string;
+  path?: string;
   icon?: string;
 };
 
-withDefaults(defineProps<EssentialRouterProps>(), {
-  Router: '#',
+withDefaults(defineProps<EssentialPathProps>(), {
+  path: '#',
   icon: '',
 });
 </script>

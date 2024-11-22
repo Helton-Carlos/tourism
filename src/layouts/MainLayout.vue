@@ -10,22 +10,29 @@
             @click="toggleLeftDrawer"
           />
 
-          <q-toolbar-title class="text-dark">
-            <h1 class="text-h4">Tourism</h1>
+          <q-toolbar-title>
+            <q-item
+              href="/"
+            >
+              <img
+                class="q-pt-md"
+                src="../assets/imagens/tourism-logo.png"
+              />
+            </q-item>
           </q-toolbar-title>
+
+          <EssentialPath
+            class="text-dark"
+            v-for="essential in list"
+            :key="essential.title"
+            v-bind="essential"
+          />
         </q-toolbar>
       </div>
 
-      <EssentialLink
-        class="text-dark"
-        v-for="link in linksList"
-        :key="link.title"
-        v-bind="link"
-      />
-
       <q-item
         clickable
-        href="/Login"
+        href="/login"
         class="text-dark"
       >
         <q-item-section
@@ -35,7 +42,7 @@
         </q-item-section>
 
         <q-item-section>
-          <q-item-label>Login</q-item-label>
+          <q-item-label class="text-weight-medium">Login</q-item-label>
         </q-item-section>
       </q-item>
     </q-header>
@@ -51,10 +58,10 @@
           Tourism
         </q-item-label>
 
-        <EssentialLink
-          v-for="link in linksList"
-          :key="link.title"
-          v-bind="link"
+        <EssentialPath
+          v-for="essential in list"
+          :key="essential.title"
+          v-bind="essential"
         />
       </q-list>
     </q-drawer>
@@ -67,32 +74,32 @@
 
 <script setup lang="ts">
 import { ref } from 'vue';
-import EssentialLink, { EssentialLinkProps } from 'components/EssentialLink.vue';
+import EssentialPath from 'components/EssentialPath.vue';
 
 defineOptions({
   name: 'MainLayout'
 });
 
-const linksList: EssentialLinkProps[] = [
+const list = [
   {
     title: 'Hospedagens',
     icon: 'bed',
-    link: '/hospedagens'
+    path: '/hospedagens'
   },
   {
     title: 'Estados',
     icon: 'map',
-    link: '/estados'
+    path: '/estados'
   },
   {
     title: 'Promoções',
     icon: 'percent',
-    link: '/promocoes'
+    path: '/promocoes'
   },
   {
     title: 'Dicas',
     icon: 'lightbulb',
-    link: '/dicas'
+    path: '/dicas'
   },
 ];
 
