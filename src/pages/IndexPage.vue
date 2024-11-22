@@ -1,17 +1,16 @@
 <template>
   <q-page class="row items-center justify-evenly">
-    <example-component
-      title="Example component"
-      active
-      :todos="todos"
-      :meta="meta"
-    ></example-component>
+    <q-img
+      src="https://picsum.photos/500/300"
+      spinner-color="blue"
+      style="height: 350px; max-width: 350px"
+    />
   </q-page>
 </template>
 
 <script setup lang="ts">
 import { ref } from 'vue';
-import { Todo, Meta } from 'components/models';
+import { Todo, Meta } from 'src/types/models';
 import ExampleComponent from 'components/ExampleComponent.vue';
 
 defineOptions({
