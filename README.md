@@ -1,24 +1,21 @@
-# tourism (tourism)
+# QUASAR V2, Vue 3 + TypeScript + Vite + Tailwind + VeeValidate
 
-tourism
+**💬 About.** 
 
-## Install the dependencies
+Tourism projeto sobre turismo. Quasar v2, Vue 3, Typescript e bibliotecas adicionais.
+
+**👇 Follow the steps.** 
+
 ```bash
-yarn
-# or
+git clone git@github.com:Helton-Carlos/tourism.git
+```
+
+```bash
 npm install
 ```
 
-### Start the app in development mode (hot-code reloading, error reporting, etc.)
 ```bash
-quasar dev
+npm run dev
 ```
 
 
-### Build the app for production
-```bash
-quasar build
-```
-
-### Customize the configuration
-See [Configuring quasar.config.js](https://v2.quasar.dev/quasar-cli-vite/quasar-config-js).
